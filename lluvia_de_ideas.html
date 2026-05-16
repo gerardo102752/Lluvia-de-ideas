@@ -33,7 +33,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
 .panel{max-width:700px;margin:16px auto 0;padding:0 16px 60px;}
 
 .acc-card{background:var(--card);border-radius:var(--r);border:1.5px solid var(--border);margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow);transition:border-color .2s;}
-.acc-card.open{border-color:var(--blue);}
+.acc-card.open{border-color:var(--border);}
 .acc-card.err{border-color:var(--red);}
 .acc-head{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;user-select:none;transition:background .15s;}
 .acc-head:hover{background:#f9fafb;}
@@ -179,11 +179,12 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
     <div class="acc-head" onclick="toggleAcc('acc-promo')">
       <div class="acc-icon">🎁</div>
       <div class="acc-title"><h3>Promociones</h3><p>Ideas o mejoras para atraer y retener clientes</p></div>
-      <span class="acc-badge" id="badge-promo">Opcional</span>
+      <span class="acc-badge req" id="badge-promo">Requerido</span>
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
       <div class="chips"><span class="chip" onclick="addChip('f-promo','Promoción cumpleaños')">Promoción cumpleaños</span><span class="chip" onclick="addChip('f-promo','Días especiales')">Días especiales</span><span class="chip" onclick="addChip('f-promo','Membresías VIP')">Membresías VIP</span><span class="chip" onclick="addChip('f-promo','Descuentos por visita')">Descuentos por visita</span><span class="chip" onclick="addChip('f-promo','2x1 en horario bajo')">2x1 en horario bajo</span><span class="chip" onclick="addChip('f-promo','Bono de bienvenida')">Bono de bienvenida</span></div><textarea class="text-in" id="f-promo" rows="3" maxlength="500" placeholder="Ej: promoción por cumpleaños, días especiales, membresías, descuentos…" oninput="updateProg();updateChar('f-promo','cc-promo');checkFilled('acc-promo','badge-promo')"></textarea>
+      <div class="ferr" id="err-promo">Campo requerido.</div>
       <div class="char-count"><span id="cc-promo">0</span>/500</div>
     </div></div>
   </div>
@@ -207,11 +208,12 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
     <div class="acc-head" onclick="toggleAcc('acc-sort')">
       <div class="acc-icon">🎟️</div>
       <div class="acc-title"><h3>Sorteo</h3><p>Ideas o mejoras para las dinámicas de sorteos</p></div>
-      <span class="acc-badge" id="badge-sort">Opcional</span>
+      <span class="acc-badge req" id="badge-sort">Requerido</span>
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
       <div class="chips"><span class="chip" onclick="addChip('f-sort','Cambiar horario')">Cambiar horario</span><span class="chip" onclick="addChip('f-sort','Premios más atractivos')">Premios más atractivos</span><span class="chip" onclick="addChip('f-sort','Sorteo diario')">Sorteo diario</span><span class="chip" onclick="addChip('f-sort','Mecánica más sencilla')">Mecánica más sencilla</span><span class="chip" onclick="addChip('f-sort','Más boletos por visita')">Más boletos por visita</span><span class="chip" onclick="addChip('f-sort','Sorteo temático')">Sorteo temático</span></div><textarea class="text-in" id="f-sort" rows="3" maxlength="500" placeholder="Ej: horarios, premios, mecánica de participación, frecuencia, temáticas…" oninput="updateProg();updateChar('f-sort','cc-sort');checkFilled('acc-sort','badge-sort')"></textarea>
+      <div class="ferr" id="err-sort">Campo requerido.</div>
       <div class="char-count"><span id="cc-sort">0</span>/500</div>
     </div></div>
   </div>
@@ -389,7 +391,7 @@ function checkFilled(accId,badgeId){
   else if(map[accId]) filled=document.getElementById(map[accId]).value.trim().length>0;
   const badge=document.getElementById(badgeId);
   if(filled){badge.textContent='✓ Listo';badge.className='acc-badge filled';}
-  else{const isReq=['badge-ident','badge-extra'].includes(badgeId);badge.textContent=isReq?'Requerido':'Opcional';badge.className='acc-badge '+(isReq?'req':'');}
+  else{const isReq=['badge-ident','badge-extra','badge-promo','badge-sort'].includes(badgeId);badge.textContent=isReq?'Requerido':'Opcional';badge.className='acc-badge '+(isReq?'req':'');}
 }
 
 function updateProg(){
@@ -413,6 +415,10 @@ function validate(){
   else setErr('err-nombre',false);
   if(!selectedDepto){setErr('err-depto',true);document.getElementById('acc-ident').classList.add('err','open');ok=false;}
   else setErr('err-depto',false);
+  if(!document.getElementById('f-promo').value.trim()){setErr('err-promo',true);document.getElementById('acc-promo').classList.add('err','open');ok=false;}
+  else setErr('err-promo',false);
+  if(!document.getElementById('f-sort').value.trim()){setErr('err-sort',true);document.getElementById('acc-sort').classList.add('err','open');ok=false;}
+  else setErr('err-sort',false);
   if(!selectedPrio){setErr('err-prio',true);document.getElementById('acc-extra').classList.add('err','open');ok=false;}
   else setErr('err-prio',false);
   if(!selectedImpact){setErr('err-impact',true);document.getElementById('acc-extra').classList.add('err','open');ok=false;}
@@ -491,8 +497,8 @@ function clearForm(silent){
   document.querySelectorAll('.acc-card').forEach(c=>c.classList.remove('err'));
   selectedDepto=null;selectedPrio=null;selectedImpact=null;
   updateProg();
-  [['badge-ident','req'],['badge-extra','req'],['badge-ayb',''],['badge-maq',''],
-   ['badge-promo',''],['badge-cort',''],['badge-sort',''],['badge-din',''],
+  [['badge-ident','req'],['badge-extra','req'],['badge-promo','req'],['badge-sort','req'],['badge-ayb',''],['badge-maq',''],
+   ['badge-cort',''],['badge-din',''],
    ['badge-mtto',''],['badge-limp',''],['badge-seg','']].forEach(([id,cls])=>{
     const el=document.getElementById(id);if(!el)return;
     el.className='acc-badge '+(cls||'');el.textContent=cls==='req'?'Requerido':'Opcional';
