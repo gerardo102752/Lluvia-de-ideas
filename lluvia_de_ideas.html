@@ -101,9 +101,6 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .toast.error{background:var(--red);}
 
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
-.chip{background:#f0f4ff;border:1.5px solid #c7d7fd;color:#1a73e8;font-size:12px;font-weight:600;padding:5px 11px;border-radius:99px;cursor:pointer;transition:all .15s;user-select:none;}
-.chip:hover{background:#1a73e8;color:#fff;border-color:#1a73e8;}
 </style>
 </head>
 <body>
@@ -155,7 +152,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-ayb','Nuevo menú')">Nuevo menú</span><span class="chip" onclick="addChip('f-ayb','Tiempos de servicio')">Tiempos de servicio</span><span class="chip" onclick="addChip('f-ayb','Presentación de platillos')">Presentación de platillos</span><span class="chip" onclick="addChip('f-ayb','Atención al cliente')">Atención al cliente</span><span class="chip" onclick="addChip('f-ayb','Variedad de bebidas')">Variedad de bebidas</span><span class="chip" onclick="addChip('f-ayb','Precios accesibles')">Precios accesibles</span></div><textarea class="text-in" id="f-ayb" rows="3" maxlength="500" placeholder="Ej: nuevos platillos, tiempos de servicio, presentación, atención al cliente…" oninput="updateProg();updateChar('f-ayb','cc-ayb');checkFilled('acc-ayb','badge-ayb')"></textarea>
+      <textarea class="text-in" id="f-ayb" rows="3" maxlength="500" placeholder="Ej: nuevos platillos, tiempos de servicio, presentación, atención al cliente…" oninput="updateProg();updateChar('f-ayb','cc-ayb');checkFilled('acc-ayb','badge-ayb')"></textarea>
       <div class="char-count"><span id="cc-ayb">0</span>/500</div>
     </div></div>
   </div>
@@ -169,7 +166,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-maq','Rotar máquinas')">Rotar máquinas</span><span class="chip" onclick="addChip('f-maq','Títulos nuevos')">Títulos nuevos</span><span class="chip" onclick="addChip('f-maq','Distribución del piso')">Distribución del piso</span><span class="chip" onclick="addChip('f-maq','Atención al jugador')">Atención al jugador</span><span class="chip" onclick="addChip('f-maq','Más denominaciones')">Más denominaciones</span><span class="chip" onclick="addChip('f-maq','Señalización')">Señalización</span></div><textarea class="text-in" id="f-maq" rows="3" maxlength="500" placeholder="Ej: rotación de máquinas, títulos nuevos, distribución del piso, atención al jugador…" oninput="updateProg();updateChar('f-maq','cc-maq');checkFilled('acc-maq','badge-maq')"></textarea>
+      <textarea class="text-in" id="f-maq" rows="3" maxlength="500" placeholder="Ej: rotación de máquinas, títulos nuevos, distribución del piso, atención al jugador…" oninput="updateProg();updateChar('f-maq','cc-maq');checkFilled('acc-maq','badge-maq')"></textarea>
       <div class="char-count"><span id="cc-maq">0</span>/500</div>
     </div></div>
   </div>
@@ -183,7 +180,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-promo','Promoción cumpleaños')">Promoción cumpleaños</span><span class="chip" onclick="addChip('f-promo','Días especiales')">Días especiales</span><span class="chip" onclick="addChip('f-promo','Membresías VIP')">Membresías VIP</span><span class="chip" onclick="addChip('f-promo','Descuentos por visita')">Descuentos por visita</span><span class="chip" onclick="addChip('f-promo','2x1 en horario bajo')">2x1 en horario bajo</span><span class="chip" onclick="addChip('f-promo','Bono de bienvenida')">Bono de bienvenida</span></div><textarea class="text-in" id="f-promo" rows="3" maxlength="500" placeholder="Ej: promoción por cumpleaños, días especiales, membresías, descuentos…" oninput="updateProg();updateChar('f-promo','cc-promo');checkFilled('acc-promo','badge-promo')"></textarea>
+      <textarea class="text-in" id="f-promo" rows="3" maxlength="500" placeholder="Ej: promoción por cumpleaños, días especiales, membresías, descuentos…" oninput="updateProg();updateChar('f-promo','cc-promo');checkFilled('acc-promo','badge-promo')"></textarea>
       <div class="ferr" id="err-promo">Campo requerido.</div>
       <div class="char-count"><span id="cc-promo">0</span>/500</div>
     </div></div>
@@ -198,7 +195,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-cort','Bebida de cortesía')">Bebida de cortesía</span><span class="chip" onclick="addChip('f-cort','Snacks gratis')">Snacks gratis</span><span class="chip" onclick="addChip('f-cort','Detalle de bienvenida')">Detalle de bienvenida</span><span class="chip" onclick="addChip('f-cort','Premio al cliente frecuente')">Premio al cliente frecuente</span><span class="chip" onclick="addChip('f-cort','Café o agua')">Café o agua</span><span class="chip" onclick="addChip('f-cort','Cupón de descuento')">Cupón de descuento</span></div><textarea class="text-in" id="f-cort" rows="3" maxlength="500" placeholder="Ej: bebidas, snacks, detalles de bienvenida, reconocimiento a cliente frecuente…" oninput="updateProg();updateChar('f-cort','cc-cort');checkFilled('acc-cort','badge-cort')"></textarea>
+      <textarea class="text-in" id="f-cort" rows="3" maxlength="500" placeholder="Ej: bebidas, snacks, detalles de bienvenida, reconocimiento a cliente frecuente…" oninput="updateProg();updateChar('f-cort','cc-cort');checkFilled('acc-cort','badge-cort')"></textarea>
       <div class="char-count"><span id="cc-cort">0</span>/500</div>
     </div></div>
   </div>
@@ -212,7 +209,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-sort','Cambiar horario')">Cambiar horario</span><span class="chip" onclick="addChip('f-sort','Premios más atractivos')">Premios más atractivos</span><span class="chip" onclick="addChip('f-sort','Sorteo diario')">Sorteo diario</span><span class="chip" onclick="addChip('f-sort','Mecánica más sencilla')">Mecánica más sencilla</span><span class="chip" onclick="addChip('f-sort','Más boletos por visita')">Más boletos por visita</span><span class="chip" onclick="addChip('f-sort','Sorteo temático')">Sorteo temático</span></div><textarea class="text-in" id="f-sort" rows="3" maxlength="500" placeholder="Ej: horarios, premios, mecánica de participación, frecuencia, temáticas…" oninput="updateProg();updateChar('f-sort','cc-sort');checkFilled('acc-sort','badge-sort')"></textarea>
+      <textarea class="text-in" id="f-sort" rows="3" maxlength="500" placeholder="Ej: horarios, premios, mecánica de participación, frecuencia, temáticas…" oninput="updateProg();updateChar('f-sort','cc-sort');checkFilled('acc-sort','badge-sort')"></textarea>
       <div class="ferr" id="err-sort">Campo requerido.</div>
       <div class="char-count"><span id="cc-sort">0</span>/500</div>
     </div></div>
@@ -227,7 +224,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-din','Torneo de máquinas')">Torneo de máquinas</span><span class="chip" onclick="addChip('f-din','Jackpot especial')">Jackpot especial</span><span class="chip" onclick="addChip('f-din','Activación por hora')">Activación por hora</span><span class="chip" onclick="addChip('f-din','Reto entre clientes')">Reto entre clientes</span><span class="chip" onclick="addChip('f-din','Puntos dobles')">Puntos dobles</span><span class="chip" onclick="addChip('f-din','Dinámica fin de semana')">Dinámica fin de semana</span></div><textarea class="text-in" id="f-din" rows="3" maxlength="500" placeholder="Ej: torneos, jackpots especiales, retos entre clientes, activaciones por hora…" oninput="updateProg();updateChar('f-din','cc-din');checkFilled('acc-din','badge-din')"></textarea>
+      <textarea class="text-in" id="f-din" rows="3" maxlength="500" placeholder="Ej: torneos, jackpots especiales, retos entre clientes, activaciones por hora…" oninput="updateProg();updateChar('f-din','cc-din');checkFilled('acc-din','badge-din')"></textarea>
       <div class="char-count"><span id="cc-din">0</span>/500</div>
     </div></div>
   </div>
@@ -241,7 +238,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-mtto','Sillas en mal estado')">Sillas en mal estado</span><span class="chip" onclick="addChip('f-mtto','Iluminación deficiente')">Iluminación deficiente</span><span class="chip" onclick="addChip('f-mtto','Clima/temperatura')">Clima/temperatura</span><span class="chip" onclick="addChip('f-mtto','Baños descuidados')">Baños descuidados</span><span class="chip" onclick="addChip('f-mtto','Estética del piso')">Estética del piso</span><span class="chip" onclick="addChip('f-mtto','Ruido excesivo')">Ruido excesivo</span></div><textarea class="text-in" id="f-mtto" rows="3" maxlength="500" placeholder="Ej: sillas en mal estado, iluminación deficiente, clima, baños, estética del piso…" oninput="updateProg();updateChar('f-mtto','cc-mtto');checkFilled('acc-mtto','badge-mtto')"></textarea>
+      <textarea class="text-in" id="f-mtto" rows="3" maxlength="500" placeholder="Ej: sillas en mal estado, iluminación deficiente, clima, baños, estética del piso…" oninput="updateProg();updateChar('f-mtto','cc-mtto');checkFilled('acc-mtto','badge-mtto')"></textarea>
       <div class="char-count"><span id="cc-mtto">0</span>/500</div>
     </div></div>
   </div>
@@ -255,7 +252,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-limp','Máquinas sucias')">Máquinas sucias</span><span class="chip" onclick="addChip('f-limp','Baños descuidados')">Baños descuidados</span><span class="chip" onclick="addChip('f-limp','Mesas con residuos')">Mesas con residuos</span><span class="chip" onclick="addChip('f-limp','Olor en el piso')">Olor en el piso</span><span class="chip" onclick="addChip('f-limp','Basureros llenos')">Basureros llenos</span><span class="chip" onclick="addChip('f-limp','Alfombras deterioradas')">Alfombras deterioradas</span></div><textarea class="text-in" id="f-limp" rows="3" maxlength="500" placeholder="Ej: máquinas sucias, baños descuidados, mesas con residuos, olor en el piso…" oninput="updateProg();updateChar('f-limp','cc-limp');checkFilled('acc-limp','badge-limp')"></textarea>
+      <textarea class="text-in" id="f-limp" rows="3" maxlength="500" placeholder="Ej: máquinas sucias, baños descuidados, mesas con residuos, olor en el piso…" oninput="updateProg();updateChar('f-limp','cc-limp');checkFilled('acc-limp','badge-limp')"></textarea>
       <div class="char-count"><span id="cc-limp">0</span>/500</div>
     </div></div>
   </div>
@@ -269,7 +266,7 @@ body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--text);min-
       <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="acc-body"><div class="acc-inner">
-      <div class="chips"><span class="chip" onclick="addChip('f-seg','Zona sin vigilancia')">Zona sin vigilancia</span><span class="chip" onclick="addChip('f-seg','Acceso inseguro')">Acceso inseguro</span><span class="chip" onclick="addChip('f-seg','Atención tardía en incidentes')">Atención tardía en incidentes</span><span class="chip" onclick="addChip('f-seg','Cámaras sin cobertura')">Cámaras sin cobertura</span><span class="chip" onclick="addChip('f-seg','Iluminación en estacionamiento')">Iluminación en estacionamiento</span><span class="chip" onclick="addChip('f-seg','Protocolo de emergencia')">Protocolo de emergencia</span></div><textarea class="text-in" id="f-seg" rows="3" maxlength="500" placeholder="Ej: zonas sin vigilancia, incidentes frecuentes, accesos inseguros, atención tardía…" oninput="updateProg();updateChar('f-seg','cc-seg');checkFilled('acc-seg','badge-seg')"></textarea>
+      <textarea class="text-in" id="f-seg" rows="3" maxlength="500" placeholder="Ej: zonas sin vigilancia, incidentes frecuentes, accesos inseguros, atención tardía…" oninput="updateProg();updateChar('f-seg','cc-seg');checkFilled('acc-seg','badge-seg')"></textarea>
       <div class="char-count"><span id="cc-seg">0</span>/500</div>
     </div></div>
   </div>
@@ -514,12 +511,6 @@ function showToast(msg,type=''){
 }
 
 
-function addChip(textareaId, text){
-  const ta = document.getElementById(textareaId);
-  const sep = ta.value.trim() ? ', ' : '';
-  ta.value = ta.value.trim() + sep + text;
-  ta.dispatchEvent(new Event('input'));
-}
 
 buildDeptoGrid(); buildPrioGrid(); buildStars(); updateProg();
 </script>
